@@ -7,10 +7,10 @@
 int main(void)
 {
 	char acharacter;
-	int ainteger
-	long along
-	long long alonglong
-	float afloat
+	int ainteger;
+	long along;
+	long long alonglong;
+	float afloat;
 
 	printf("size of a char: %lu byte(s)\n", sizeof(acharacter));
 	printf("size of an int: %lu byte(s)"\n, sizeof(ainteger));
