@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	cha letter;
+	char letter;
 
 	for (letter = 'a'; letter <= 'z'; letter++)
 	{
@@ -17,3 +17,5 @@ int main(void)
 	putchar('\n');
 
 	return (0);
+
+}
