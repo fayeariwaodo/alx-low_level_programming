@@ -7,7 +7,6 @@
  */
 int main(void)
 {
-
 	int num;
 	char letter;
 
