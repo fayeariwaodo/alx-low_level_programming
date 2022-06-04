@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h>]
 
 /**
  * main - prints all posible combinations of two different digits,
@@ -19,7 +19,7 @@ int main(void)
 
 			if (digit1 == 8 && digit2 == 9)
 			break;
-		
+
 			putchar(',');
 			putchar(' ');
 		}
