@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <main.h>
 
 /**
  * main - Entry function
@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-char str[]= "Alx\n";
+char str[]= "main\n";
 int i = 0;
 
 while (str[i] != '\0')
