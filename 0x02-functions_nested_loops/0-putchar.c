@@ -1,4 +1,4 @@
-#include <main.h>
+#include <stdio.h>
 
 /**
  * main - Entry function
@@ -7,14 +7,14 @@
  */
 int main(void)
 {
-char str[]= "main\n";
+char str[]= "startdard\n";
 int i = 0;
 
 while (str[i] != '\0')
 	{
 	char c = str[i];
 
-	_putchar(c);
+	putchar(c);
 	i++;
 	}
 return (0);
