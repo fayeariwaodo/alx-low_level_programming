@@ -1,10 +1,8 @@
-#include "main.h"
-
 /**
- * _isupper - checks is a character is uppercase
- * @c: carrier integer variable
- * Return: 1 if c is uppercase
- * Returns 0
+ * _isupper -  Find if a given letter is upper case
+ * @c: given letter
+ *
+ * Return: Return 1 if c is uppercase, 0 if otherwise
  */
 
 int _isupper(int c)
@@ -15,4 +13,4 @@ int _isupper(int c)
 	}
 	return (0);
 
-i}
+}
