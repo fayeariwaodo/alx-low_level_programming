@@ -16,12 +16,12 @@ void print_number(int n)
 		_putchar('_');
 		n2 *= -1;
 	}
-	if (n2 / 100000 !=0)
+	if (n2 / 100000 != 0)
 	{
 		hn = n2 / 100000;
-		_putchar(hn /10000 % 10 + '0');
+		_putchar(hn / 10000 % 10 + '0');
 		_putchar(hn / 1000 % 10 + '0');
-		_putchar(hn / 100 % + '0');
+		_putchar(hn / 100 % +'0');
 		_putchar(hn / 10 % 10 + '0');
 		_putchar(hn % 10 + '0');
 	}
