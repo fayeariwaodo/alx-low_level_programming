@@ -24,6 +24,7 @@ int main(void)
 		else
 			f++;
 	}
-	printf("%1d\n", lf;
+	printf("%ld\n", lf);
+
 	return (0);
 }
