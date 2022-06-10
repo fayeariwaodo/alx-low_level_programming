@@ -9,7 +9,7 @@ void more_numbers(void)
 {
 	int num1, num2;
 
-	t = 0;
+	num2 = 0;
 	while (num2 < 10)
 	{
 		if (num1 > 15)
