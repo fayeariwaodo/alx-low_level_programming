@@ -1,7 +1,7 @@
 #include"main.h"
 
 /**
- *  print_square - prints a square, followed by a new line.
+ *  print_square - prints a square
  *  @size: Size of square sides
  *
  *  Return: Nothing
@@ -24,7 +24,8 @@ void print_square(int size)
 			_putchar('\n');
 			y++;
 		}
+	
 	}
-		else
-			_putchar('\n');
+	else
+		_putchar('\n');
 }
