@@ -2,6 +2,7 @@
 
 /**
  * print_line - draws a straight line in the terminal
+ * @n: Length of Line
  *
  * Return: void
  */
