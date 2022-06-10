@@ -6,7 +6,7 @@
  * Return: Return 1 if c is uppercase, 0  otherwise
  */
 
-char _isupper(int c)
+int _isupper(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 	{
