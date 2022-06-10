@@ -7,23 +7,23 @@
  */
 int main(void)
 {
-	long int f, n, 1f;
+	long int f, n, lf;
 
 	n = 612852475143;
 	f = 3;
-	1f = 0;
+	lf = 0;
 	while (n != 1)
 	{
 		if (n % f == 0)
 		{
 
 			n = n / f;
-			if (f > 1f)
-				1f = f;
+			if (f > lf)
+				lf = f;
 		}
 		else
 			f++;
 	}
-	printf("%1d\n", 1f);
+	printf("%1d\n", lf;
 	return (0);
 }
