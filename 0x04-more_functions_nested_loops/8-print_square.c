@@ -23,7 +23,8 @@ void print_square(int size)
 			}
 			_putchar('\n');
 			y++;
-		}	
+
+		}
 	}
 	else
 		_putchar('\n');
