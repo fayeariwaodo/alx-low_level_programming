@@ -18,5 +18,5 @@ void more_numbers(void)
 		num1++;
 	}
 	_putchar('\n');
-	num1++;
+	num2++;
 }
