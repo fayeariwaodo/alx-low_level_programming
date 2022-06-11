@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * print_alphabet - Entry point
  * Prints a function that prints the lowercase followed by a new line
@@ -6,12 +6,12 @@
  */
 void print_alphabet(void)
 {
-	char letter = 'a';
+	char alpha = 'a';
 
-	while (letter <= 'z')
+	while (alpha <= 'z')
 	{
-		putchar(letter);
-		letter++;
+		putchar(alpha);
+		alpha++;
 	}
 	putchar('\n');
 }
