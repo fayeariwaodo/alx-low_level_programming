@@ -7,12 +7,12 @@
  * @str: Given string to print half of
  * Return: Nothing
  */
-void puts_half(/char *str)			
+void puts_half(char *str)
 {
 	int i, h;
 
 	i = h = 0;
-	while (*(str + i) !=0)
+	while (*(str + i) != 0)
 	{
 		i++;
 	}
