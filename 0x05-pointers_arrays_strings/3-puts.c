@@ -2,7 +2,7 @@
 
 /**
  * _puts - print given strings
- * @faye: string to print
+ * @str: string to print
  *
  * Return: 0
  */
