@@ -7,13 +7,13 @@
  * Return: 0
  */
 
-void _puts(char *faye)
+void _puts(char *str)
 {
 	int i;
 
-	while (*(faye + i) != '\0')
+	while (*(str + i) != '\0')
 	{
-		_putchar(*(faye + i));
+		_putchar(*(str + i));
 		i++;
 	}
 	_putchar('\n');
