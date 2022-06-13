@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * reset_t0_98 - takes a pointer to and int as a parameter and updates the v alue it points to 98
+ * reset_to_98 - set value of a variable to 98 using a pointer
  *
  * @n: the value needed to change
  * Return: void
