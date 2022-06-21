@@ -1,11 +1,11 @@
 #include "main.h"
-
+#include <stdio.h>
 
 /**
  * _strpbrk -searches a string for any of a set of bytes
  * @s: pointes to char
  * @accept: pointer to char
- * Return:void
+ * Return: NULL
  */
 
 char *_strpbrk(char *s, char *accept)
@@ -23,5 +23,5 @@ char *_strpbrk(char *s, char *accept)
 		}
 		s++;
 	}
-	return (void);
+	return (NULL);
 }
