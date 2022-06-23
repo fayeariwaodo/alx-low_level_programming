@@ -50,4 +50,3 @@ int is_palindrome(char *s)
 
 	return (p1(s, len - 1));
 }
-© 2022 GitHub, Inc.
