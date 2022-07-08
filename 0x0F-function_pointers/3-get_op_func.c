@@ -1,25 +1,33 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "3-calc.h"
+
 /**
- * main - is the main function
- * @argc: number of lines arguments
- * @argv: array of elements
- * Return: 0
+ * get_op_func - is a function that get an operation
+ * @s: operator input
+ * Return: function result
  */
-
-int main(int argc, char *argv[])
+int (*get_op_func(char *s))(int, int)
 {
-	int i;
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
+	int i = 0;
 
-	if (argc != 4)
+	while (ops[i].op)
 	{
-		printf("Error\n");
-		exit(98);
+		if (strcmp(s, ops[i].op) == 0)
+		{
+			return (ops[i].f);
+		}
+		i++;
 	}
-
-	i = (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
-	printf("%d\n", i);
-
-	return (0);
+	printf("Error\n");
+	exit(99);
 }
