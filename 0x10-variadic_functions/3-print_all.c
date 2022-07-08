@@ -1,30 +1,47 @@
 #include <stdarg.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 /**
- * print_strings - is a function that prints strings
- * @n: is the input
- * @separator: separator input
+ * print_all - is a function that prints anything
+ * @format: list of all arguments passed to the function
  * Return: void
  */
-void print_strings(const char *separator, const unsigned int n, ...)
+
+void print_all(const char * const format, ...)
 {
 	unsigned int i;
-	va_list args;
-	char *s;
+	va_list numbers;
+	char *p, *separator;
 
-	va_start(args, n);
+	va_start(numbers, format);
+	separator = "";
 	i = 0;
-	while (i < n)
+	while (format && format[i])
 	{
-		s = va_arg(args, char *);
-		if (s == NULL)
-			s = "(nil)";
-		printf("%s", s);
-		if (separator != NULL && i < n - 1)
-			printf("%s", separator);
+		switch (format[i])
+		{
+			case 'c':
+				printf("%s%c", separator, va_arg(numbers, int));
+				break;
+			case 'i':
+				printf("%s%d", separator, va_arg(numbers, int));
+				break;
+			case 'f':
+				printf("%s%f", separator, va_arg(numbers, double));
+				break;
+			case 's':
+				p = va_arg(numbers, char *);
+				if (p == NULL)
+					p = "(nil)";
+				printf("%s%s", separator, p);
+				break;
+			default:
+				i++;
+				continue;
+		}
+		separator = ", ";
 		i++;
 	}
-		va_end(args);
-		printf("\n");
+	printf("\n");
+	va_end(numbers);
 }
