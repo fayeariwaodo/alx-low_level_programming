@@ -2,25 +2,21 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * print_strings - is a function that prints strings
- * @n: is the input
+ * print_numbers - is a function that prints numbers
+ * @n: is the int input
  * @separator: separator input
- * Return: void
+ * Return: numbers entered as args to the function
  */
-void print_strings(const char *separator, const unsigned int n, ...)
+void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
 	va_list args;
-	char *s;
 
 	va_start(args, n);
 	i = 0;
 	while (i < n)
 	{
-		s = va_arg(args, char *);
-		if (s == NULL)
-			s = "(nil)";
-		printf("%s", s);
+		printf("%d", va_arg(args, int));
 		if (separator != NULL && i < n - 1)
 			printf("%s", separator);
 		i++;
