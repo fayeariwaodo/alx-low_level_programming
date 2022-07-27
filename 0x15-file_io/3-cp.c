@@ -1,33 +1,52 @@
 #include "main.h"
 
 /**
- * append_text_to_file - appends text at the end of a file
- * @filename: file to append the text to
- * @text_content: content to append into the file
+ * main - copies the content of a file to another file
+ * @argc: number of arguments passed to the program
+ * @argv: array of arguments
  *
- * Return: 1 on success and -1 on failure
+ * Return: Always 0 (Success)
  */
-int append_text_to_file(const char *filename, char *text_content)
+int main(int argc, char *argv[])
 {
-	int fd, t, s = 0;
+	int fd_r, fd_w, r, a, b;
+	char buf[BUFSIZ];
 
-	if (!filename)
-		return (-1);
-
-	fd = open(filename, O_WRONLY | O_APPEND);
-	if (fd < 0)
-		return (-1);
-
-	if (text_content)
+	if (argc != 3)
 	{
-		while (text_content[s])
-			s++;
-		t = write(fd, text_content, s);
-		if (t != s)
-			return (-1);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
 	}
-
-	close(fd);
-
-	return (1);
+	fd_r = open(argv[1], O_RDONLY);
+	if (fd_r < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	fd_w = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	while ((r = read(fd_r, buf, BUFSIZ)) > 0)
+	{
+		if (fd_w < 0 || write(fd_w, buf, r) != r)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			close(fd_r);
+			exit(99);
+		}
+	}
+	if (r < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	a = close(fd_r);
+	b = close(fd_w);
+	if (a < 0 || b < 0)
+	{
+		if (a < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_r);
+		if (b < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_w);
+		exit(100);
+	}
+	return (0);
 }
